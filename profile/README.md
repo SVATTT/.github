@@ -7,10 +7,12 @@
 - Each team have a secret X-Team-Token. 
 - We will send it to each team. 
 - Here is the sample curl: 
-```curl -i -s -k -X $'PUT'
+```
+curl -i -s -k -X $'PUT'
 -H $'Host: 10.254.0.253:8080' -H $'Accept-Encoding: gzip, deflate' -H $'Accept: /' -H $'Connection: close' -H $'X-Team-Token: xxxxxxxxxxxxxxxx' -H $'Content-Length: 36' -H $'Content-Type: application/json'
 --data-binary $'["WHUZIXPMV4F0GWGDN6BV1GBHM4X3S7H="]'
-$'http://10.254.0.253:8080/flags'```
+$'http://10.254.0.253:8080/flags'
+```
 
 ## Attack & Defense Flag Format
 Pay attention that the format of flag in attack defense mode is a base64 encoded string (for example: WHUZIXPMV4F0GWGDN6BV1GBHM4X3S7H= )
