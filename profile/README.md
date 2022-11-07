@@ -2,7 +2,7 @@
 
 ## Network & Rules
 - Network: https://drive.google.com/file/d/1j0ZDi2i5kKpNb9Wxphu6w2x4YbMJ0esU/view?usp=sharing
-- Rule: https://docs.google.com/document/d/1qNlUazOYDklyrx3DFXzFO1XvAKAv4XAOTGrLR2qpbQA/edit
+- Rule: https://docs.google.com/document/d/1c670gXXjvSHH1ipW8kM_3twW6EYNSU4k_WKlRAKNtqA/view?usp=sharing
 
 ## Some Problems
 - The scoreboard is not quite beautiful
