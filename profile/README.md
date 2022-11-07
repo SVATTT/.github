@@ -1,12 +1,47 @@
-## Orgnizations for organize SVATTT 👋
+# Orgnizations for organize SVATTT 
 
-<!--
+## Some Problems
 
-**Here are some ideas to get you started:**
+## How to submit flag in attack defense mode
+- In attack defense mode, you need to call a PUT api to internal ip address of scoreboard (http://10.254.0.253:8080/flags) to submit flag. 
+- Each team have a secret X-Team-Token. 
+- We will send it to each team. 
+- Here is the sample curl: 
+```curl -i -s -k -X $'PUT'
+-H $'Host: 10.254.0.253:8080' -H $'Accept-Encoding: gzip, deflate' -H $'Accept: /' -H $'Connection: close' -H $'X-Team-Token: xxxxxxxxxxxxxxxx' -H $'Content-Length: 36' -H $'Content-Type: application/json'
+--data-binary $'["WHUZIXPMV4F0GWGDN6BV1GBHM4X3S7H="]'
+$'http://10.254.0.253:8080/flags'```
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Attack & Defense Flag Format
+Pay attention that the format of flag in attack defense mode is a base64 encoded string (for example: WHUZIXPMV4F0GWGDN6BV1GBHM4X3S7H= )
+
+## Attack & Defend Challenges
+- web (port 4001): https://drive.google.com/file/d/1jvvBax-RuBUGl4oIqwj7Pvk2KVbGKX1F/view?usp=sharing
+- pwn1 (port 4002) https://drive.google.com/file/d/1c-edc1Um91-6axkzwzTAq2CNZL1pjwEV/view?usp=share_link
+- pwn2 (port 4003) https://drive.google.com/file/d/1keHWyZR7IgXWRJkgsn1g8pLiahZHRk5B/view?usp=share_link
+
+## Forbidden Actions in attack defense mode
+The following actions are forbidden:
+- Try to use automate tools to send too many requests lead to dos another team. You don't need bruteforce to get the flag.
+- Forward traffic from your proxy server to another team challenge server to defense.
+
+## Round Update
+- Each round is 5 minutes. 
+- Each round will have a new flag. 
+- The service status of each round is updated after the health check. 
+- If the health check is failed, the failed status was show through all the current round. It's not REALTIME.
+
+## Attack & Defense Guide
+### Attack guide
+- Try to find and exploit the easy bug first and then find the bug that is hard to prevent.
+- Write a script to automate the exploit and submit flag to scoreboard. Don't manual, it's too slow.
+- Keep persistence in system to easy get flag later.
+### Defense guide
+- Sniff traffic to detect exploit payload, example tool: tcpdump
+- Develop a proxy to intercept and drop exploit payload
+   - Be careful if you use iptables, you can DROP ALL YOUR TRAFFIC (try iptables-save, iptables-restore to backup rules)
+   - If you don't have custom one, our teammate provides a good example tool here: https://github.com/Q5Ca/simple-portforwarder
+- Exploit yourself system to remove all persistence backdoor.
+
+## Flag for service V-store (4001)
+- The lastest flag of current round is always appended at the end of file /flag or table flags
