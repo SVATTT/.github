@@ -1,6 +1,16 @@
 # Orgnizations for organize SVATTT 
 
+## Network & Rules
+- Network: https://drive.google.com/file/d/1j0ZDi2i5kKpNb9Wxphu6w2x4YbMJ0esU/view?usp=sharing
+- Rule: https://docs.google.com/document/d/1qNlUazOYDklyrx3DFXzFO1XvAKAv4XAOTGrLR2qpbQA/edit
+
 ## Some Problems
+- The scoreboard is not quite beautiful
+  - Need someone do css this
+- One team can only attack another team through gateway 
+  - Set iptables and verify with curl that one proxy cannot connect directly to other chall and other proxy.
+- One team can not defense by forwarding traffic to another team. 
+  - The task need to add a secret to each team. And that checker verify that it's connecting to the correct team.
 
 ## How to submit flag in attack defense mode
 - In attack defense mode, you need to call a PUT api to internal ip address of scoreboard (http://10.254.0.253:8080/flags) to submit flag. 
