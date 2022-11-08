@@ -11,6 +11,8 @@
   - Set iptables and verify with curl that one proxy cannot connect directly to other chall and other proxy.
 - One team can not defense by forwarding traffic to another team. 
   - The task need to add a secret to each team. And that checker verify that it's connecting to the correct team.
+- One team can put persistence backdoor in one chall and tunnel through it to attack directly other challs.
+  - Test one chall cannot connect directly to other challs
 
 ## How to submit flag in attack defense mode
 - In attack defense mode, you need to call a PUT api to internal ip address of scoreboard (http://10.254.0.253:8080/flags) to submit flag. 
